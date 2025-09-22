@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>INSECTIGATORS</title>
+    <style>
+      body {
+        background-color: #000000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+
+      .form-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #222;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-group input[type="file"] {
+        border: 1px solid #666;
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: #444;
+        color: #fff;
+        outline: none;
+      }
+
+      .form-group input[type="submit"] {
+        background-color: #008cba;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      header {
+        position: relative;
+        background-color: black;
+        height: 75vh;
+        min-height: 25rem;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 100px;
+      }
+
+      header video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      header .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      header .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 1;
+      }
+      .mission-section {
+        margin-top: 5%;
+        background-color: black;
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        border: 2px solid white; /* White border */
+        border-radius: 10px; /* Rounded corners */
+        transition: transform 0.3s ease-in-out;
+      }
+      .upload-section {
+        margin-top: 5%;
+        background-color: black;
+        color: white;
+        padding: 50px 0;
+        margin: auto;
+        width: 80%;
+
+        border: 2px solid white; /* White border */
+        border-radius: 10px; /* Rounded corners */
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .upload-section:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      .mission-section:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      /* Media Query for devices withi coarse pointers and no hover functionality */
+
+      /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+      @media (pointer: coarse) and (hover: none) {
+        header {
+          background: url("https://source.unsplash.com/XT5OInaElMw/1600x900")
+            black no-repeat center center scroll;
+        }
+
+        header video {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+      <div class="overlay"></div>
+
+      <!-- The HTML5 video element that will create the background video on the header -->
+      <video
+        playsinline="playsinline"
+        autoplay="autoplay"
+        muted="muted"
+        loop="loop"
+      >
+        <source
+          src="{{ url_for('static', filename='bg.mp4') }}"
+          type="video/mp4"
+        />
+      </video>
+
+      <!-- The header content -->
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-white">
+            <h1 class="display-3">INSECTIGATORS</h1>
+            <p class="lead mb-0">We will find that pest</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="mission-section">
+      <div class="container">
+        <h1 class="text-center text-white mb-4">Mission Statement</h1>
+        <p class="lead">
+          Insects, though small in size, can wreak havoc on our environment,
+          homes, and health. From destructive termites to disease-carrying
+          mosquitoes, these tiny creatures pose significant threats. But fear
+          not, for we have developed an advanced AI model capable of identifying
+          various insect types with remarkable accuracy. Not only does our AI
+          identify these pests, but it also provides tailored suggestions on how
+          to effectively rid your surroundings of them. Armed with this
+          technology, you can protect your home, safeguard your health, and
+          preserve the environment. Say goodbye to pest-related worries and
+          embrace a pest-free lifestyle with our innovative solution.
+        </p>
+      </div>
+    </section>
+    <br class="br-bottom" />
+
+    <section class="upload-section">
+      <h2 class="text-center text-white mb-4">Identify an Insect</h2>
+      <div class="form-container">
+        <h2>Upload Picture</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="picture">Choose an insect for identifcation:</label>
+            <input
+              type="file"
+              id="picture"
+              name="picture"
+              accept="image/*"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Upload" />
+          </div>
+        </form>
+      </div>
+    </section>
+    <br />
+  </body>
+</html>
